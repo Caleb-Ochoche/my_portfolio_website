@@ -63,7 +63,7 @@ const Hero = () => {
               <img
 
                 alt="Caleb Mkaane"
-                className="w-full h-full object-cover object-bottom" src="/lovable-uploads/53d72957-8a31-47ec-be1d-a6a4bedbf0af.png" />
+                className="w-full h-full object-cover object-top" src="/lovable-uploads/53d72957-8a31-47ec-be1d-a6a4bedbf0af.png" />
               
             </div>
             <div className="absolute -bottom-2 -right-2 w-16 h-16 bg-accent rounded-full flex items-center justify-center animate-float">
