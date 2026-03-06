@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Code2, Palette, Zap } from "lucide-react";
+import { Code2, Palette, Zap, ImagePlus } from "lucide-react";
 
 const highlights = [
   { icon: Code2, label: "Clean Code", desc: "Well-structured & maintainable" },
