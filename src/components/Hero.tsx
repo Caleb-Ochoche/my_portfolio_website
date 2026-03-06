@@ -20,8 +20,8 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="flex-1 text-center lg:text-left"
-        >
+          className="flex-1 text-center lg:text-left">
+          
           <p className="text-primary font-medium text-sm tracking-widest uppercase mb-4">
             Hello, I'm
           </p>
@@ -38,14 +38,14 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
             <a
               href="#projects"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-medium hover:opacity-90 transition-opacity glow-primary"
-            >
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-medium hover:opacity-90 transition-opacity glow-primary">
+              
               View My Work <ArrowDown size={16} />
             </a>
             <a
               href="#contact"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg border border-border text-foreground font-medium hover:bg-secondary transition-colors"
-            >
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg border border-border text-foreground font-medium hover:bg-secondary transition-colors">
+              
               Contact Me <Mail size={16} />
             </a>
           </div>
@@ -56,15 +56,15 @@ const Hero = () => {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex-shrink-0"
-        >
+          className="flex-shrink-0">
+          
           <div className="relative">
             <div className="w-56 h-56 sm:w-72 sm:h-72 rounded-full overflow-hidden border-2 border-primary/30 glow-primary animate-pulse_glow">
               <img
-                src="https://ui-avatars.com/api/?name=Caleb+Mkaane&size=300&background=0891b2&color=fff&bold=true&font-size=0.35"
+
                 alt="Caleb Mkaane"
-                className="w-full h-full object-cover"
-              />
+                className="w-full h-full object-cover" src="/lovable-uploads/53d72957-8a31-47ec-be1d-a6a4bedbf0af.png" />
+              
             </div>
             <div className="absolute -bottom-2 -right-2 w-16 h-16 bg-accent rounded-full flex items-center justify-center animate-float">
               <span className="text-accent-foreground font-bold text-lg">⚡</span>
@@ -72,8 +72,8 @@ const Hero = () => {
           </div>
         </motion.div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default Hero;
