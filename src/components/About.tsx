@@ -27,7 +27,21 @@ const About = () => {
             Passionate About Building <span className="text-gradient">Great Web Experiences</span>
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-3 gap-12 items-center">
+            {/* Photo placeholder */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={isInView ? { opacity: 1, scale: 1 } : {}}
+              transition={{ duration: 0.6 }}
+              className="flex justify-center"
+            >
+              <div className="w-64 h-72 rounded-2xl border-2 border-dashed border-primary/30 bg-card flex flex-col items-center justify-center overflow-hidden">
+                {/* Replace this div with an <img> tag pointing to your uploaded image */}
+                <ImagePlus size={40} className="text-muted-foreground mb-2" />
+                <span className="text-xs text-muted-foreground">Upload your photo</span>
+              </div>
+            </motion.div>
+
             {/* Text */}
             <div>
               <p className="text-muted-foreground leading-relaxed mb-6">
