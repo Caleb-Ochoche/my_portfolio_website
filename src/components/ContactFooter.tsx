@@ -127,10 +127,21 @@ const ContactFooter = () => {
               />
               <button
                 type="submit"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-medium hover:opacity-90 transition-opacity glow-primary"
+                disabled={status === "sending"}
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-medium hover:opacity-90 transition-opacity glow-primary disabled:opacity-50"
               >
-                Send Message <Send size={16} />
+                {status === "sending" ? (
+                  <>Sending... <Loader2 size={16} className="animate-spin" /></>
+                ) : (
+                  <>Send Message <Send size={16} /></>
+                )}
               </button>
+              {status === "success" && (
+                <p className="text-sm text-green-400 mt-2">Message sent successfully! I'll get back to you soon.</p>
+              )}
+              {status === "error" && (
+                <p className="text-sm text-destructive mt-2">Failed to send message. Please try again or email me directly.</p>
+              )}
             </form>
           </div>
         </motion.div>
