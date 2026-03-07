@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Code2, Palette, Zap, ImagePlus } from "lucide-react";
+import { Code2, Palette, Zap } from "lucide-react";
+import aboutPhoto from "@/assets/about-photo.png";
 
 const highlights = [
   { icon: Code2, label: "Clean Code", desc: "Well-structured & maintainable" },
@@ -35,11 +36,7 @@ const About = () => {
               transition={{ duration: 0.6 }}
               className="flex justify-center"
             >
-              <div className="w-64 h-72 rounded-2xl border-2 border-dashed border-primary/30 bg-card flex flex-col items-center justify-center overflow-hidden">
-                {/* Replace this div with an <img> tag pointing to your uploaded image */}
-                <ImagePlus size={40} className="text-muted-foreground mb-2" />
-                <span className="text-xs text-muted-foreground">Upload your photo</span>
-              </div>
+              <img src={aboutPhoto} alt="Caleb Mkaane" className="w-64 h-72 rounded-2xl object-cover object-top" />
             </motion.div>
 
             {/* Text */}
