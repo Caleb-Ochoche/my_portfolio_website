@@ -1,6 +1,11 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Mail, Phone, MapPin, Github, Linkedin, Twitter, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Github, Linkedin, Twitter, Send, Loader2 } from "lucide-react";
+import emailjs from "@emailjs/browser";
+
+const EMAILJS_SERVICE_ID = "service_ecttc7y";
+const EMAILJS_TEMPLATE_ID = "template_p1asq8a";
+const EMAILJS_PUBLIC_KEY = "q9OMbOWm7ePANVViG";
 
 const contactInfo = [
   { icon: Mail, label: "cmkaane@gmail.com", href: "mailto:cmkaane@gmail.com" },
@@ -18,12 +23,30 @@ const ContactFooter = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Placeholder — integrate with a service later
-    alert("Thank you for your message! I'll get back to you soon.");
-    setFormData({ name: "", email: "", message: "" });
+    setStatus("sending");
+
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+        },
+        EMAILJS_PUBLIC_KEY
+      );
+      setStatus("success");
+      setFormData({ name: "", email: "", message: "" });
+      setTimeout(() => setStatus("idle"), 5000);
+    } catch {
+      setStatus("error");
+      setTimeout(() => setStatus("idle"), 5000);
+    }
   };
 
   return (
@@ -104,10 +127,21 @@ const ContactFooter = () => {
               />
               <button
                 type="submit"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-medium hover:opacity-90 transition-opacity glow-primary"
+                disabled={status === "sending"}
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-medium hover:opacity-90 transition-opacity glow-primary disabled:opacity-50"
               >
-                Send Message <Send size={16} />
+                {status === "sending" ? (
+                  <>Sending... <Loader2 size={16} className="animate-spin" /></>
+                ) : (
+                  <>Send Message <Send size={16} /></>
+                )}
               </button>
+              {status === "success" && (
+                <p className="text-sm text-green-400 mt-2">Message sent successfully! I'll get back to you soon.</p>
+              )}
+              {status === "error" && (
+                <p className="text-sm text-destructive mt-2">Failed to send message. Please try again or email me directly.</p>
+              )}
             </form>
           </div>
         </motion.div>
