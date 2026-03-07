@@ -10,9 +10,9 @@ const navLinks = [
 ];
 
 const socialLinks = [
-  { icon: Github, href: "https://github.com/", label: "GitHub" },
-  { icon: Linkedin, href: "https://linkedin.com/", label: "LinkedIn" },
-  { icon: Twitter, href: "https://twitter.com/", label: "Twitter" },
+  { icon: Github, href: "https://github.com/Caleb-Ochorse", label: "GitHub" },
+  { icon: Linkedin, href: "https://ng.linkedin.com/in/caleb-mkaane-793993252", label: "LinkedIn" },
+  { icon: Twitter, href: "https://x.com/CalebAndre36718", label: "Twitter/X" },
 ];
 
 const Navbar = () => {
