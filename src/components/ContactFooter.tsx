@@ -3,15 +3,15 @@ import { useRef, useState } from "react";
 import { Mail, Phone, MapPin, Github, Linkedin, Twitter, Send } from "lucide-react";
 
 const contactInfo = [
-  { icon: Mail, label: "hello@calebmkaane.dev", href: "mailto:hello@calebmkaane.dev" },
-  { icon: Phone, label: "+254 700 000 000", href: "tel:+254700000000" },
-  { icon: MapPin, label: "Nairobi, Kenya", href: "#" },
+  { icon: Mail, label: "cmkaane@gmail.com", href: "mailto:cmkaane@gmail.com" },
+  { icon: Phone, label: "+234 904 361 2254", href: "tel:+2349043612254" },
+  { icon: MapPin, label: "Benue, Nigeria", href: "#" },
 ];
 
 const socialLinks = [
-  { icon: Github, href: "https://github.com/", label: "GitHub" },
-  { icon: Linkedin, href: "https://linkedin.com/", label: "LinkedIn" },
-  { icon: Twitter, href: "https://twitter.com/", label: "Twitter/X" },
+  { icon: Github, href: "https://github.com/Caleb-Ochorse", label: "GitHub" },
+  { icon: Linkedin, href: "https://ng.linkedin.com/in/caleb-mkaane-793993252", label: "LinkedIn" },
+  { icon: Twitter, href: "https://x.com/CalebAndre36718", label: "Twitter/X" },
 ];
 
 const ContactFooter = () => {
