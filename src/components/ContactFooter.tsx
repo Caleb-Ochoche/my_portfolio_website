@@ -9,7 +9,7 @@ const contactInfo = [
 ];
 
 const socialLinks = [
-  { icon: Github, href: "https://github.com/Caleb-Ochorse", label: "GitHub" },
+  { icon: Github, href: "https://github.com/Caleb-Ochoche", label: "GitHub" },
   { icon: Linkedin, href: "https://ng.linkedin.com/in/caleb-mkaane-793993252", label: "LinkedIn" },
   { icon: Twitter, href: "https://x.com/CalebAndre36718", label: "Twitter/X" },
 ];
