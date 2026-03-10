@@ -149,7 +149,7 @@ const ContactFooter = () => {
         {/* Footer */}
         <div className="mt-20 pt-8 border-t border-border text-center">
           <p className="text-sm text-muted-foreground">
-            © 2025 Caleb Mkaane. All rights reserved.
+            © {new Date().getFullYear()} Caleb Mkaane. All rights reserved.
           </p>
         </div>
       </div>
